@@ -30,7 +30,7 @@ def request_data():
         mavutil.mavlink.MAV_CMD_SET_MESSAGE_INTERVAL,
         0,  # Confirmation
         mavutil.mavlink.MAV_DATA_STREAM_ALL,  # All data streams
-        1,  # Interval in microseconds (.1 second)
+        100000,  # Interval in microseconds (.1 second)
         0, 0, 0, 0, 0  # Parameters 4-9 (Unused)
     )
     master.mav.send(msg)
