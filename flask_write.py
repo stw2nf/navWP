@@ -4,7 +4,7 @@ import time
 import math
 
 # Flask app URL
-URL = 'http://127.0.0.1:8080/chase_drone'  # Update with your actual Flask app URL
+URL = 'http://10.0.15.63:8080/chase_drone'  # Update with your actual Flask app URL
 
 def send_post_request(url, data):
     try:
@@ -18,8 +18,8 @@ def send_post_request(url, data):
         print(f"Error sending POST request: {e}")
 
 # Initial latitude and longitude values
-initial_lat = 38.502363
-initial_lon = -90.490937
+initial_lat = 39.745960
+initial_lon = -105.059320
 #initial_lat = 38.5
 #initial_lon = -90.4
 radius = 0.0001  # Approximately 100 meters in degrees (adjust as needed)
@@ -59,8 +59,8 @@ while True:  # Run indefinitely
     send_post_request(URL, data)
 
     # Increment iteration
-    iteration += 1
+    iteration += 20
 
     # Optional: Add a delay between iterations
-    time.sleep(.01)  # 1 second delay
+    time.sleep(1)  # 1 second delay
 
